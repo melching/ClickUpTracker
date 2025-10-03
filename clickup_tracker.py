@@ -290,17 +290,14 @@ class ClickUpTrackerApp(rumps.App):
     @rumps.clicked("⚙️ Settings")
     def show_settings(self, _):
         """Show settings dialog."""
-        current_token = self.config.get("api_token", "")
-        message = "Enter your ClickUp API Token:\n(Get it from ClickUp Settings > Apps)"
-        if current_token:
-            message += f"\n\nCurrent token: {current_token[:10]}..."
-        
+        # Simplified message without current token to avoid focus issues
         window = rumps.Window(
-            message=message,
+            message="Enter your ClickUp API Token:\n(Get it from ClickUp Settings > Apps)",
             title="Settings",
             default_text="",
             ok="Save",
-            cancel="Cancel"
+            cancel="Cancel",
+            dimensions=(320, 160)
         )
         response = window.run()
         
