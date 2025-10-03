@@ -16,9 +16,11 @@ class ClickUpTrackerApp(rumps.App):
     def __init__(self):
         super(ClickUpTrackerApp, self).__init__(
             "ClickUp Tracker",
-            icon="⏱️",
+            icon=None,
             quit_button=None
         )
+        # Set title with emoji since icon path causes issues
+        self.title = "⏱️"
         
         # Load configuration
         self.config = self.load_config()
@@ -288,10 +290,15 @@ class ClickUpTrackerApp(rumps.App):
     @rumps.clicked("⚙️ Settings")
     def show_settings(self, _):
         """Show settings dialog."""
+        current_token = self.config.get("api_token", "")
+        message = "Enter your ClickUp API Token:\n(Get it from ClickUp Settings > Apps)"
+        if current_token:
+            message += f"\n\nCurrent token: {current_token[:10]}..."
+        
         window = rumps.Window(
-            message="Enter your ClickUp API Token:\n(Get it from ClickUp Settings > Apps)",
+            message=message,
             title="Settings",
-            default_text=self.config.get("api_token", ""),
+            default_text="",
             ok="Save",
             cancel="Cancel"
         )

@@ -1,0 +1,20 @@
+[project]
+name = "clickup-tracker"
+version = "1.0.0"
+description = "A simple macOS menubar app for ClickUp time tracking"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "rumps>=0.4.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

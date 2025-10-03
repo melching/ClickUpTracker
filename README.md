@@ -13,8 +13,9 @@ A simple macOS menubar app that provides an easy interface for time tracking wit
 ## Requirements
 
 - macOS (10.10 or later)
-- Python 3.7 or higher
+- Python 3.12 or higher
 - ClickUp account with API access
+- uv (Python package manager)
 
 ## Installation
 
@@ -24,17 +25,24 @@ A simple macOS menubar app that provides an easy interface for time tracking wit
    cd ClickUpTracker
    ```
 
-2. **Install dependencies:**
+2. **Install uv (if not already installed):**
    ```bash
-   pip install -r requirements.txt
+   pip install uv
    ```
 
-3. **Get your ClickUp API token:**
+3. **Install dependencies using uv:**
+   ```bash
+   uv pip install -r requirements.txt
+   # Or using pyproject.toml:
+   uv pip install -e .
+   ```
+
+4. **Get your ClickUp API token:**
    - Go to ClickUp Settings → Apps
    - Click "Generate" under API Token
    - Copy your token
 
-4. **Configure the app:**
+5. **Configure the app:**
    - Copy `config.example.json` to `config.json`
    - Or run the app and use the Settings menu to enter your API token
 
@@ -43,10 +51,10 @@ A simple macOS menubar app that provides an easy interface for time tracking wit
 ### Running the App
 
 ```bash
-python clickup_tracker.py
+python3 clickup_tracker.py
 ```
 
-The app will appear in your macOS menubar with a ⏱️ icon.
+The app will appear in your macOS menubar.
 
 ### Basic Operations
 

@@ -2,16 +2,22 @@
 
 ## Getting Started in 5 Minutes
 
-### 1. Install Python (if not already installed)
+### 1. Install Python 3.12+ (if not already installed)
 ```bash
-# Check if Python 3 is installed
+# Check if Python 3.12+ is installed
 python3 --version
 
 # If not installed, download from python.org or use Homebrew:
-brew install python3
+brew install python@3.12
 ```
 
-### 2. Clone and Setup
+### 2. Install uv Package Manager
+```bash
+# Install uv
+pip3 install uv
+```
+
+### 3. Clone and Setup
 ```bash
 # Clone the repository
 git clone https://github.com/melching/ClickUpTracker.git
@@ -21,7 +27,7 @@ cd ClickUpTracker
 ./setup.sh
 ```
 
-### 3. Get Your ClickUp API Token
+### 4. Get Your ClickUp API Token
 1. Go to https://app.clickup.com/
 2. Click your avatar (bottom left)
 3. Select "Settings"
