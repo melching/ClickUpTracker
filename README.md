@@ -1,6 +1,8 @@
 > **Note:** This project is 99% coded using LLMs as I have no experience with Swift or SwiftUI. Please report any issues you find or fix them yourself and create a PR. Thanks!
 > Also, I used almost exclusively Claude 4.5 Sonnet. Was honestly surprised how well it worked out.
 
+> **Another Note:** There are certain decisions I made that I normally wouldn't have when doing/prompting this. This was partly due to my lack of experience with Swift and SwiftUI, due to limitations of the ClickUp-API (who makes an API without proper search?!) and my curiosity how LLMs would handle certain problems.
+
 # ClickUpTracker
 
 ![macOS](https://img.shields.io/badge/macOS-13.0+-blue) ![Swift](https://img.shields.io/badge/Swift-5.9+-orange)
