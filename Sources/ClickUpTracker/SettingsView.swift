@@ -85,6 +85,34 @@ struct SettingsView: View {
                     }
                 }
                 
+                Section(header: Text("Keyboard Shortcuts")) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Global keyboard shortcuts work even when the app is not in focus")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("Start/Pause Tracking")
+                                    .frame(width: 180, alignment: .leading)
+                                ShortcutRecorderView(shortcut: $settings.startStopShortcut)
+                            }
+                            
+                            HStack {
+                                Text("Stop & Search Tasks")
+                                    .frame(width: 180, alignment: .leading)
+                                ShortcutRecorderView(shortcut: $settings.stopAndAssignShortcut)
+                            }
+                            
+                            HStack {
+                                Text("Discard Tracked Time")
+                                    .frame(width: 180, alignment: .leading)
+                                ShortcutRecorderView(shortcut: $settings.discardShortcut)
+                            }
+                        }
+                    }
+                }
+                
                 Section(header: Text("Task Cache")) {
                     VStack(alignment: .leading, spacing: 12) {
                         Toggle("Auto-refresh task cache", isOn: $settings.autoRefreshEnabled)

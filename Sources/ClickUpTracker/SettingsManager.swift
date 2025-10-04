@@ -61,6 +61,48 @@ class SettingsManager: ObservableObject {
         }
     }
     
+    @Published var startStopShortcut: KeyboardShortcut? {
+        didSet {
+            if let shortcut = startStopShortcut {
+                UserDefaults.standard.set(shortcut.toDictionary(), forKey: "start_stop_shortcut")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "start_stop_shortcut")
+            }
+            // Defer the update to avoid recursive initialization
+            DispatchQueue.main.async {
+                GlobalShortcutManager.shared.updateFromSettings()
+            }
+        }
+    }
+    
+    @Published var stopAndAssignShortcut: KeyboardShortcut? {
+        didSet {
+            if let shortcut = stopAndAssignShortcut {
+                UserDefaults.standard.set(shortcut.toDictionary(), forKey: "stop_and_assign_shortcut")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "stop_and_assign_shortcut")
+            }
+            // Defer the update to avoid recursive initialization
+            DispatchQueue.main.async {
+                GlobalShortcutManager.shared.updateFromSettings()
+            }
+        }
+    }
+    
+    @Published var discardShortcut: KeyboardShortcut? {
+        didSet {
+            if let shortcut = discardShortcut {
+                UserDefaults.standard.set(shortcut.toDictionary(), forKey: "discard_shortcut")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "discard_shortcut")
+            }
+            // Defer the update to avoid recursive initialization
+            DispatchQueue.main.async {
+                GlobalShortcutManager.shared.updateFromSettings()
+            }
+        }
+    }
+    
     var refreshInterval: TimeInterval {
         return TimeInterval(refreshIntervalMinutes.rawValue * 60)
     }
@@ -88,6 +130,25 @@ class SettingsManager: ObservableObject {
         
         let spaceIDsArray = UserDefaults.standard.stringArray(forKey: "selected_space_ids") ?? []
         self.selectedSpaceIDs = Set(spaceIDsArray)
+        
+        // Load shortcuts
+        if let shortcutDict = UserDefaults.standard.dictionary(forKey: "start_stop_shortcut") {
+            self.startStopShortcut = KeyboardShortcut(from: shortcutDict)
+        } else {
+            self.startStopShortcut = nil
+        }
+        
+        if let shortcutDict = UserDefaults.standard.dictionary(forKey: "stop_and_assign_shortcut") {
+            self.stopAndAssignShortcut = KeyboardShortcut(from: shortcutDict)
+        } else {
+            self.stopAndAssignShortcut = nil
+        }
+        
+        if let shortcutDict = UserDefaults.standard.dictionary(forKey: "discard_shortcut") {
+            self.discardShortcut = KeyboardShortcut(from: shortcutDict)
+        } else {
+            self.discardShortcut = nil
+        }
     }
 }
 

@@ -63,6 +63,12 @@ struct MenuBarView: View {
                     HStack {
                         Image(systemName: timeTracker.state == .tracking ? "pause.circle.fill" : "play.circle.fill")
                         Text(timeTracker.state == .tracking ? "Pause Tracking" : "Start Tracking")
+                        Spacer()
+                        if let shortcut = settings.startStopShortcut {
+                            Text(shortcut.displayString)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -76,6 +82,12 @@ struct MenuBarView: View {
                     HStack {
                         Image(systemName: "list.bullet")
                         Text("Stop & Search Tasks")
+                        Spacer()
+                        if let shortcut = settings.stopAndAssignShortcut {
+                            Text(shortcut.displayString)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -90,6 +102,12 @@ struct MenuBarView: View {
                     HStack {
                         Image(systemName: "trash")
                         Text("Discard Tracked Time")
+                        Spacer()
+                        if let shortcut = settings.discardShortcut {
+                            Text(shortcut.displayString)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -142,6 +160,12 @@ struct MenuBarView: View {
             }
         } message: {
             Text("Are you sure you want to discard \(timeTracker.getFormattedCurrentTime()) without assigning it to a task? This action cannot be undone.")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .showTaskSelector)) { _ in
+            showingTaskSelector = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .showDiscardConfirmation)) { _ in
+            showingDiscardAlert = true
         }
     }
     
