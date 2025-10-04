@@ -8,6 +8,12 @@ A native macOS menu bar application for intelligent time tracking with ClickUp i
 
 ClickUpTracker is a professional time tracking app that lives in your macOS menu bar. It features smart segment-based time tracking, visual status indicators, and seamless ClickUp integration with full control over your time entries before submission.
 
+## 📸 Screenshots
+
+| General | Assign Task | Settings |
+|---|---|---|
+| ![General](docs/assets/general.png) | ![Assign Task](docs/assets/assign-task.png) | ![Settings](docs/assets/settings.png) |
+
 ## ✨ Key Features
 
 ### 🎯 Smart Time Tracking
