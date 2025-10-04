@@ -4,6 +4,8 @@
 
 A native macOS menu bar application for intelligent time tracking with ClickUp integration. Built with Swift and SwiftUI.
 
+> **Note:** The prebuilt `ClickUpTracker.app` in this repository is a template and does not include the latest compiled code. You must build the app yourself to get a working version with ClickUp integration. See the instructions below for building and bundling.
+
 ## Overview
 
 ClickUpTracker is a professional time tracking app that lives in your macOS menu bar. It features smart segment-based time tracking, visual status indicators, and seamless ClickUp integration with full control over your time entries before submission.
@@ -47,3 +49,49 @@ ClickUpTracker is a professional time tracking app that lives in your macOS menu
 - **Rich Descriptions**: Add context to time entries
 - **Full Time Data**: Submits both duration and end time to ClickUp
 - **Smart Notifications**: Configurable reminders when tracking is active
+
+## 🚀 Running ClickUpTracker
+
+You must build the app before running it for the first time. The provided `ClickUpTracker.app` is only a template and will not work until you build the project.
+
+You can run ClickUpTracker in several ways, depending on your needs:
+
+### 1. Build and Run from Source (Recommended)
+
+To build and run the app from source:
+
+```sh
+./build.sh
+```
+This script cleans, builds, and launches the app using Swift Package Manager.
+
+### 2. Create a Fresh .app Bundle
+
+If you want to rebuild the `.app` bundle (for example, after code changes):
+
+```sh
+./create-app-bundle.sh
+```
+This will build the executable and create a new `ClickUpTracker.app` bundle with all required resources.
+
+### 3. Run with Console Logging (Debugging)
+
+To see all log output and debug API issues, use the provided script:
+
+```sh
+./run-with-logs.sh
+```
+This will show all `print()` statements and API call logs in your terminal.
+
+### 4. Standard Run (after building)
+
+- Double-click `ClickUpTracker.app` in Finder, or
+- Run from Terminal:
+  ```sh
+  open ClickUpTracker.app
+  ```
+
+---
+
+- All scripts must be run from the project root directory.
+- For more details, see the comments in each script file.
