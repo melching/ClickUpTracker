@@ -51,12 +51,6 @@ Temporary Items
 DerivedData/
 ClickUpTracker.app/
 
-# Documentation (generated)
-PAGINATION_IMPLEMENTATION.md
-SEARCH_ON_DEMAND.md
-ENHANCED_SEARCH.md
-FIXES_APPLIED.md
-
 # Playgrounds
 timeline.xctimeline
 playground.xcworkspace

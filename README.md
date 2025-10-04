@@ -4,8 +4,6 @@
 
 A native macOS menu bar application for intelligent time tracking with ClickUp integration. Built with Swift and SwiftUI.
 
-> **Note:** The prebuilt `ClickUpTracker.app` in this repository is a template and does not include the latest compiled code. You must build the app yourself to get a working version with ClickUp integration. See the instructions below for building and bundling.
-
 ## Overview
 
 ClickUpTracker is a professional time tracking app that lives in your macOS menu bar. It features smart segment-based time tracking, visual status indicators, and seamless ClickUp integration with full control over your time entries before submission.
