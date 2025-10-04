@@ -56,23 +56,23 @@ You must build the app before running it for the first time. The provided `Click
 
 You can run ClickUpTracker in several ways, depending on your needs:
 
-### 1. Build and Run from Source (Recommended)
+### 1. Create a Full .app Bundle (Recommended)
 
-To build and run the app from source:
-
-```sh
-./build.sh
-```
-This script cleans, builds, and launches the app using Swift Package Manager.
-
-### 2. Create a Fresh .app Bundle
-
-If you want to rebuild the `.app` bundle (for example, after code changes):
+To build a complete, fully functional macOS app bundle:
 
 ```sh
 ./create-app-bundle.sh
 ```
-This will build the executable and create a new `ClickUpTracker.app` bundle with all required resources.
+This script builds the executable, creates a proper `.app` bundle with all required resources, and enables full macOS integration including system notifications and menu bar functionality.
+
+### 2. Build and Run from Source (Development)
+
+For development and testing without creating a bundle:
+
+```sh
+./build.sh
+```
+This script cleans, builds, and optionally launches the raw executable using Swift Package Manager. Note: The raw executable may lack some macOS integrations like notifications.
 
 ### 3. Run with Console Logging (Debugging)
 
