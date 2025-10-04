@@ -1,3 +1,6 @@
+> **Note:** This project is 99% coded using LLMs as I have no experience with Swift or SwiftUI. Please report any issues you find or fix them yourself and create a PR. Thanks!
+> Also, I used almost exclusively Claude 4.5 Sonnet. Was honestly surprised how well it worked out.
+
 # ClickUpTracker
 
 ![macOS](https://img.shields.io/badge/macOS-13.0+-blue) ![Swift](https://img.shields.io/badge/Swift-5.9+-orange)
