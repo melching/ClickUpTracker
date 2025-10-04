@@ -1,21 +1,43 @@
 # ClickUpTracker
-A simple app acting as a different interface for time tracking with ClickUp. Mostly coded using LLMs as a hobby project.
 
-Idea:
-This app is basically just an icon in the menu bar and some options when you click it. The icon shows if you are currently tracking time or not.
+![macOS](https://img.shields.io/badge/macOS-13.0+-blue) ![Swift](https://img.shields.io/badge/Swift-5.9+-orange)
 
-On click the following options are revealed:
-- (readonly) Current tracked time
-- Start / Pause tracking time
-- Stop tracking time
-  - On stop the user is asked to select a task from ClickUp to which the tracked time should be assigned.
-  - Instead of tracking time automatically, it should only prefill the time tracked and require user confirmation.  Basically open the usual ClickUp time tracking dialog with the time already filled in where the user can still edit things and add comments.
-- Settings
-  - ClickUp API Key
-  - Team ID
-  - Notification freuqency (e.g. every 30min, every hour, every 2 hours)
-- Quit 
+A native macOS menu bar application for intelligent time tracking with ClickUp integration. Built with Swift and SwiftUI.
 
-If a tracking session is running, a notification is shown every X minutes (configurable in settings) to remind the user that time tracking is active. This is just to avoid forgetting to stop tracking time.
+## Overview
 
-Long term I want to integrate hotkeys to start/pause/stop tracking time without having to click the icon in the menu bar. These should also be configurable in the settings.
+ClickUpTracker is a professional time tracking app that lives in your macOS menu bar. It features smart segment-based time tracking, visual status indicators, and seamless ClickUp integration with full control over your time entries before submission.
+
+## ✨ Key Features
+
+### 🎯 Smart Time Tracking
+
+- **Segment-Based Tracking**: Tracks separate time segments without automatic merging
+- **Visual Status Indicators**: Menu bar icon changes color based on tracking state
+  - 🟢 Green: Actively tracking
+  - 🟠 Orange: Paused
+  - ⚪ Gray: Idle
+- **Pause & Resume**: Multiple start/stop cycles preserved as separate segments
+- **Real-time Display**: Live tracking shows seconds; overview displays in clean minutes
+
+### ⏱️ Intelligent Time Processing
+
+- **Configurable Minimum Increments**: Round time to 1, 10, 15, or 30 minutes
+- **Smart Segment Merging**: Automatically handles overlapping time periods
+- **Preview Before Submit**: See exactly what will be submitted to ClickUp
+- **Flexible Editing**: Adjust start/end times for each segment before submission
+
+### 🔍 Powerful Task Management
+
+- **Local Cache**: Fast client-side search with auto-refresh
+- **Space Filtering**: Filter tasks by ClickUp spaces (with readable space names)
+- **Task Status Display**: Color-coded badges showing current task state
+- **Archived Tasks**: Automatically filtered out
+- **Subtask Support**: Search includes subtasks
+
+### 💼 Professional Features
+
+- **Billable Tracking**: Toggle billable status per entry (default configurable)
+- **Rich Descriptions**: Add context to time entries
+- **Full Time Data**: Submits both duration and end time to ClickUp
+- **Smart Notifications**: Configurable reminders when tracking is active
